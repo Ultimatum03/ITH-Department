@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-Information Technology and Health Informatics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <h1>About Information Technology and Health Informatics</h1>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" style="margin: 0 auto 14px; display: flex;"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<main>
+    <section>
+        <div class="about-content">
+
+        <h2>About Our Department</h2>
+        <p>
+            The Department of Information Technology and Health Informatics is dedicated to integrating information technology with healthcare systems to improve patient care, healthcare management, and medical research. The department equips students with the knowledge and practical skills needed to develop, manage, and secure health information systems in modern healthcare environments.
+        </p>
+        <p>
+            Through a combination of academic excellence, practical training, and research, students gain expertise in areas such as health data management, electronic health records, healthcare software development, cybersecurity, telemedicine, artificial intelligence in healthcare, and data analytics.
+        </p>
+        <p>
+            The department is committed to producing highly skilled professionals capable of driving innovation and digital transformation within the healthcare sector both nationally and globally.
+        </p>
+        </div>
+
+        <div class="mission">
+        <h2>Our Mission</h2>
+        <p>
+            To provide quality education, research, and innovation in Information Technology and Health Informatics while preparing students to meet the technological needs of modern healthcare systems.
+        </p>
+        </div>
+
+        <div class="vision">
+        <h2>Our Vision</h2>
+        <p>
+            To be a leading department recognized for excellence in teaching, research, innovation, and the application of information technology in healthcare.
+        </p>
+        </div>
+
+        <div class="objectives">
+        <h2>Objectives</h2>
+        <p>
+            Train competent professionals in Health Informatics and Information Technology.
+            Promote research and innovation in healthcare technology.
+            Develop skills in health information management and data analytics.
+            Encourage ethical and professional practices in healthcare technology.
+            Support the digital transformation of healthcare systems.
+        </p>
+        </div>
+    </section>
+</main>
+<body>
+    <script>
+      const body = document.body;
+      const themeButtons = document.querySelectorAll('.theme-toggle');
+      const savedTheme = localStorage.getItem('theme');
+
+      const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        body.classList.toggle('dark-mode', isDark);
+        themeButtons.forEach((button) => {
+          const icon = button.querySelector('i');
+          if (!icon) return;
+          icon.classList.toggle('fa-moon', !isDark);
+          icon.classList.toggle('fa-sun', isDark);
+          button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        });
+      };
+
+      const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      applyTheme(preferredTheme);
+
+      themeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+          localStorage.setItem('theme', nextTheme);
+          applyTheme(nextTheme);
+        });
+      });
+    </script>
+</body>
+</html>
+
+<style>
+div.about-content, div.mission, div.vision, div.objectives {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
