@@ -9,6 +9,8 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>Our Staff | Information Technology & Health Informatics</title>
+    <meta name="description" content="Meet the Head of Department and the academic staff of the Information Technology and Health Informatics Department.">
+    <link rel="icon" href="ITH.jpeg" type="image/jpeg">
 
     <link rel="stylesheet" href="style.css">
 
@@ -52,7 +54,7 @@
                     About Us
                 </a>
 
-                <a href="index.html#programs">
+                <a href="#" data-coming-soon>
                     Programs
                 </a>
 
@@ -64,13 +66,13 @@
                     Gallery
                 </a>
 
-                <a href="index.html#contact">
+                <a href="contact.html">
                     Contact Us
                 </a>
 
                 <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
 
-                <a href="#" class="search-icon">
+                <a href="#" data-coming-soon class="search-icon">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </a>
 
@@ -194,7 +196,7 @@
                                 Software Development
                             </p>
 
-                            <button class="staff-profile">
+                            <button class="staff-profile" data-coming-soon>
                                 View Profile
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -230,7 +232,7 @@
                                 Survey Analysis
                             </p>
 
-                            <button class="staff-profile">
+                            <button class="staff-profile" data-coming-soon>
                                 View Profile
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -266,7 +268,7 @@
                                 Academic Staff
                             </p>
 
-                            <button class="staff-profile">
+                            <button class="staff-profile" data-coming-soon>
                                 View Profile
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -302,7 +304,7 @@
                                 Principles of Compiler
                             </p>
 
-                            <button class="staff-profile">
+                            <button class="staff-profile" data-coming-soon>
                                 View Profile
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
@@ -352,19 +354,19 @@
 
                 <div class="footer-social">
 
-                    <a href="#">
+                    <a href="#" data-coming-soon>
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
 
-                    <a href="#">
+                    <a href="#" data-coming-soon>
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="#">
+                    <a href="#" data-coming-soon>
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
 
-                    <a href="#">
+                    <a href="#" data-coming-soon>
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
@@ -412,7 +414,7 @@
                     </li>
 
                     <li>
-                        <a href="index.html#contact">
+                        <a href="contact.html">
                             Contact
                         </a>
                     </li>
@@ -475,41 +477,13 @@
                 All Rights Reserved.
             </p>
 
-            </p>
-
         </div>
 
     </footer>
 
-    <script>
-      const body = document.body;
-      const themeButtons = document.querySelectorAll('.theme-toggle');
-      const savedTheme = localStorage.getItem('theme');
+    <script src="theme.js"></script>
 
-      const applyTheme = (theme) => {
-        const isDark = theme === 'dark';
-        body.classList.toggle('dark-mode', isDark);
-        themeButtons.forEach((button) => {
-          const icon = button.querySelector('i');
-          if (!icon) return;
-          icon.classList.toggle('fa-moon', !isDark);
-          icon.classList.toggle('fa-sun', isDark);
-          button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        });
-      };
-
-      const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      applyTheme(preferredTheme);
-
-      themeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-          localStorage.setItem('theme', nextTheme);
-          applyTheme(nextTheme);
-        });
-      });
-    </script>
-
+    <script src="coming-soon.js"></script>
 </body>
 
 </html>

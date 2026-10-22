@@ -3,14 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About-Information Technology and Health Informatics</title>
+    <title>About Us | Information Technology &amp; Health Informatics</title>
+    <meta name="description" content="Learn about the mission, vision and objectives of the Department of Information Technology and Health Informatics.">
+    <link rel="icon" href="ITH.jpeg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+    div.about-content, div.mission, div.vision, div.objectives {
+        padding: 20px;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    </style>
 </head>
+<body>
+    <header>
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+
+                <img src="ITH.jpeg"
+                     alt="ITH Department Logo">
+
+                <div>
+                    <span>Information Technology</span>
+                    <span>& Health Informatics</span>
+                </div>
+
+            </a>
+
+            <nav>
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html" class="active">About Us</a>
+
+                <a href="#" data-coming-soon>Programs</a>
+
+                <a href="staff.html">Staff</a>
+
+                <a href="gallery.html">Gallery</a>
+
+                <a href="contact.html">Contact Us</a>
+
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+
+            </nav>
+
+        </div>
+
+    </header>
 
 <header>
     <h1>About Information Technology and Health Informatics</h1>
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" style="margin: 0 auto 14px; display: flex;"><i class="fa-solid fa-moon"></i></button>
 </header>
 
 <main>
@@ -45,52 +92,66 @@
 
         <div class="objectives">
         <h2>Objectives</h2>
-        <p>
-            Train competent professionals in Health Informatics and Information Technology.
-            Promote research and innovation in healthcare technology.
-            Develop skills in health information management and data analytics.
-            Encourage ethical and professional practices in healthcare technology.
-            Support the digital transformation of healthcare systems.
-        </p>
+        <ul>
+            <li>Train competent professionals in Health Informatics and Information Technology.</li>
+            <li>Promote research and innovation in healthcare technology.</li>
+            <li>Develop skills in health information management and data analytics.</li>
+            <li>Encourage ethical and professional practices in healthcare technology.</li>
+            <li>Support the digital transformation of healthcare systems.</li>
+        </ul>
         </div>
     </section>
 </main>
-<body>
-    <script>
-      const body = document.body;
-      const themeButtons = document.querySelectorAll('.theme-toggle');
-      const savedTheme = localStorage.getItem('theme');
 
-      const applyTheme = (theme) => {
-        const isDark = theme === 'dark';
-        body.classList.toggle('dark-mode', isDark);
-        themeButtons.forEach((button) => {
-          const icon = button.querySelector('i');
-          if (!icon) return;
-          icon.classList.toggle('fa-moon', !isDark);
-          icon.classList.toggle('fa-sun', isDark);
-          button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        });
-      };
+    <footer>
 
-      const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      applyTheme(preferredTheme);
+    <div class="footer-container">
 
-      themeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-          localStorage.setItem('theme', nextTheme);
-          applyTheme(nextTheme);
-        });
-      });
-    </script>
+        <!-- Department Information -->
+        <div class="footer-box">
+            <img src="ITH.jpeg" alt="departmental logo">
+            <h2>Information Technology <br>
+                &amp; Health Informatics</h2>
+            <p>
+                Building knowledge, skill, innovation and excellence in
+                Information Technology and Health Informatics.
+            </p>
+
+        </div>
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="#" data-coming-soon>Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📍 Federal University of Health Sciences, Ila-Orangun, Osun State, Nigeria</p>
+            <p>📞 +234 916 024 9506</p>
+            <p>✉ oluwaferanmisamuel99@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Information Technology & Health Informatics.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+    <script src="theme.js"></script>
+    <script src="coming-soon.js"></script>
 </body>
 </html>
-
-<style>
-div.about-content, div.mission, div.vision, div.objectives {
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
